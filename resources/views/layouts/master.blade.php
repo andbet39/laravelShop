@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Laravel eshop</title>
+    <title>{{ env('APP_NAME') }}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -19,17 +19,17 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">Laravel digital Shop</a>
+                <a class="navbar-brand" href="/">{{ env('APP_NAME') }}</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     @if(!Auth::user())
-                        <li><a href="/auth/login">Login</a></li>
-                        <li><a href="/auth/register">Signup</a></li>
+                        <li><a href="{{ route('login') }}">Login</a></li>
+                        <li><a href="{{ route('register') }}">Signup</a></li>
                     @else
                         <li><a href="/order">My Order <span class="fa fa-briefcase"></span></a></li>
                         <li><a href="/cart">Cart <span class="fa fa-shopping-cart"></span></a></li>
-                        <li><a href="/auth/logout">Logout {{ Auth::user()->name}}</a></li>
+                        <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout {{ Auth::user()->name}}</a><form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form></li>
                     @endif
                 </ul>
             </div><!-- /.navbar-collapse -->

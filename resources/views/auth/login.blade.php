@@ -15,7 +15,7 @@
                 </div>
                 <div style="padding-top:30px" class="panel-body" >
                     <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-                    <form method="POST" action="/auth/login" class="form-horizontal" role="form">
+                    <form method="POST" action="{{ route('login') }}" class="form-horizontal" role="form">
                         {!! csrf_field() !!}
 
                         <div style="margin-bottom: 25px" class="input-group">
@@ -42,7 +42,7 @@
                             <div class="col-md-12 control">
                                 <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
                                     Don't have an account!
-                                    <a href="/auth/register" >
+                                    <a href="{{ route('register') }}" >
                                         Sign Up Here
                                     </a>
                                 </div>

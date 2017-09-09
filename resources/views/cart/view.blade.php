@@ -64,7 +64,7 @@
         {!! csrf_field() !!}
         <script
                 src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                data-key="pk_test_p0QQDCeJQA7W9X9y0VP7QOz5"
+                data-key="pk_test_TzEIeIl0o2RuLF4q9GEf6JXj"
                 data-amount="{{$total*100}}"
                 data-name="CODETutorial.IO"
                 data-description="Products"

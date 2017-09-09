@@ -15,7 +15,7 @@
                 <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a></div>
             </div>
             <div class="panel-body" >
-                <form method="POST" action="/auth/register"  class="form-horizontal" role="form">
+                <form method="POST" action="{{ route('register') }}"  class="form-horizontal" role="form">
                     {!! csrf_field() !!}
                     <div class="form-group">
                         <label for="email" class="col-md-3 control-label">Email</label>
