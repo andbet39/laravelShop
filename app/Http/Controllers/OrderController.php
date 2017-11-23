@@ -36,11 +36,11 @@ class OrderController extends Controller
         }
 
 
-        if(
-            Auth::user()->charge($total*100, [
-            'source' => $token,
-            'receipt_email' => Auth::user()->email,
-        ])){
+        // if(
+        //     Auth::user()->charge($total*100, [
+        //     'source' => $token,
+        //     'receipt_email' => Auth::user()->email,
+        // ])){
 
             $order = new Order();
             $order->total_paid= $total;
@@ -55,12 +55,12 @@ class OrderController extends Controller
                 $orderItem->save();
 
                 CartItem::destroy($item->id);
-        }
+            }
             return redirect('/order/'.$order->id);
 
-        }else{
-            return redirect('/cart');
-        }
+        // } else {
+        //     return redirect('/cart');
+        // }
 
     }
 
